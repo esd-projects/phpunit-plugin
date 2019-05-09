@@ -30,9 +30,10 @@ class PHPUnitProcess extends Process
         $command = new Command();
         try {
             $command->run(["", Server::$instance->getContainer()->get("phpunit.file")], false);
-        } catch (\Throwable $e) {
+        }catch (\Throwable $e){
+            $this->getSwooleProcess()->exit();
         }
-        $this->getSwooleProcess()->kill($this->getProcessPid());
+
     }
 
     public function onProcessStop()
