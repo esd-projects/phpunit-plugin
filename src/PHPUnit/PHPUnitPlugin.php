@@ -8,11 +8,9 @@
 
 namespace GoSwoole\Plugins\PHPUnit;
 
-use GoSwoole\BaseServer\Plugins\Config\ConfigPlugin;
 use GoSwoole\BaseServer\Server\Context;
 use GoSwoole\BaseServer\Server\PlugIn\AbstractPlugin;
 use GoSwoole\BaseServer\Server\PlugIn\PluginInterfaceManager;
-use GoSwoole\BaseServer\Server\Server;
 use GoSwoole\Plugins\Console\ConsoleConfig;
 use GoSwoole\Plugins\Console\ConsolePlugin;
 
@@ -24,7 +22,7 @@ class PHPUnitPlugin extends AbstractPlugin
     public function __construct()
     {
         parent::__construct();
-        $this->atBefore(ConsolePlugin::class);
+        $this->atAfter(ConsolePlugin::class);
     }
 
     /**
@@ -46,23 +44,19 @@ class PHPUnitPlugin extends AbstractPlugin
     {
         parent::onAdded($pluginInterfaceManager);
         $pluginInterfaceManager->addPlug(new ConsolePlugin());
+        //添加一个cmd
+        $console = new ConsoleConfig();
+        $console->addCmdClass(TestCmd::class);
+        $console->merge();
     }
 
     /**
      * 在服务启动前
      * @param Context $context
      * @return mixed
-     * @throws \GoSwoole\BaseServer\Server\Exception\ConfigException
-     * @throws \ReflectionException
      */
     public function beforeServerStart(Context $context)
     {
-        //添加一个cmd
-        $console = new ConsoleConfig();
-        $console->addCmdClass(TestCmd::class);
-        $console->merge();
-        //添加一个unit进程
-        $context->getServer()->addProcess(self::processName, PHPUnitProcess::class, self::processGroupName);
         return;
     }
 

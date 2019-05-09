@@ -39,12 +39,21 @@ class TestCmd extends Command
         $this->addArgument("file", InputArgument::OPTIONAL, "文件或者文件夹路径","tests");
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|null
+     * @throws \GoSwoole\BaseServer\Server\Exception\ConfigException
+     * @throws \ReflectionException
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $serverConfig = Server::$instance->getServerConfig();
         $serverConfig->setProxyServerClass(UnitServer::class);
         $file = $input->getArgument("file");
         Server::$instance->getContainer()->set("phpunit.file", $file);
+        //添加一个unit进程
+        Server::$instance->addProcess(PHPUnitPlugin::processName, PHPUnitProcess::class, PHPUnitPlugin::processGroupName);
         return ConsolePlugin::NOEXIT;
     }
 }
