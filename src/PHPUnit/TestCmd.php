@@ -6,11 +6,11 @@
  * Time: 上午10:59
  */
 
-namespace GoSwoole\Plugins\PHPUnit;
+namespace ESD\Plugins\PHPUnit;
 
-use GoSwoole\BaseServer\Server\Context;
-use GoSwoole\BaseServer\Server\Server;
-use GoSwoole\Plugins\Console\ConsolePlugin;
+use ESD\BaseServer\Server\Context;
+use ESD\BaseServer\Server\Server;
+use ESD\Plugins\Console\ConsolePlugin;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -43,7 +43,7 @@ class TestCmd extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return int|null
-     * @throws \GoSwoole\BaseServer\Server\Exception\ConfigException
+     * @throws \ESD\BaseServer\Server\Exception\ConfigException
      * @throws \ReflectionException
      */
     protected function execute(InputInterface $input, OutputInterface $output)

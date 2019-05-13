@@ -6,12 +6,12 @@
  * Time: 15:09
  */
 
-namespace GoSwoole\Plugins\PHPUnit;
+namespace ESD\Plugins\PHPUnit;
 
 
-use GoSwoole\BaseServer\Server\Message\Message;
-use GoSwoole\BaseServer\Server\Process;
-use GoSwoole\BaseServer\Server\Server;
+use ESD\BaseServer\Server\Message\Message;
+use ESD\BaseServer\Server\Process;
+use ESD\BaseServer\Server\Server;
 use PHPUnit\TextUI\Command;
 
 class PHPUnitProcess extends Process

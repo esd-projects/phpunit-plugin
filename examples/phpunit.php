@@ -6,8 +6,8 @@
  * Time: 14:51
  */
 
-use GoSwoole\BaseServer\ExampleClass\Server\DefaultServer;
-use GoSwoole\Plugins\PHPUnit\PHPUnitPlugin;
+use ESD\BaseServer\ExampleClass\Server\DefaultServer;
+use ESD\Plugins\PHPUnit\PHPUnitPlugin;
 
 require __DIR__ . '/../vendor/autoload.php';
 

@@ -1,6 +1,6 @@
 <?php
 
-use GoSwoole\Plugins\PHPUnit\GoTestCase;
+use ESD\Plugins\PHPUnit\GoTestCase;
 
 /**
  * Created by PhpStorm.

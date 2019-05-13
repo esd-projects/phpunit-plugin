@@ -6,13 +6,13 @@
  * Time: 15:04
  */
 
-namespace GoSwoole\Plugins\PHPUnit;
+namespace ESD\Plugins\PHPUnit;
 
-use GoSwoole\BaseServer\Server\Context;
-use GoSwoole\BaseServer\Server\PlugIn\AbstractPlugin;
-use GoSwoole\BaseServer\Server\PlugIn\PluginInterfaceManager;
-use GoSwoole\Plugins\Console\ConsoleConfig;
-use GoSwoole\Plugins\Console\ConsolePlugin;
+use ESD\BaseServer\Server\Context;
+use ESD\BaseServer\Server\PlugIn\AbstractPlugin;
+use ESD\BaseServer\Server\PlugIn\PluginInterfaceManager;
+use ESD\Plugins\Console\ConsoleConfig;
+use ESD\Plugins\Console\ConsolePlugin;
 
 class PHPUnitPlugin extends AbstractPlugin
 {
@@ -37,7 +37,7 @@ class PHPUnitPlugin extends AbstractPlugin
     /**
      * @param PluginInterfaceManager $pluginInterfaceManager
      * @return mixed|void
-     * @throws \GoSwoole\BaseServer\Exception
+     * @throws \ESD\BaseServer\Exception
      * @throws \ReflectionException
      */
     public function onAdded(PluginInterfaceManager $pluginInterfaceManager)

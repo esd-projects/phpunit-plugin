@@ -6,10 +6,10 @@
  * Time: 15:33
  */
 
-namespace GoSwoole\Plugins\PHPUnit;
+namespace ESD\Plugins\PHPUnit;
 
 
-use GoSwoole\BaseServer\Server\Server;
+use ESD\BaseServer\Server\Server;
 use PHPUnit\Framework\TestCase;
 
 class GoTestCase extends TestCase
