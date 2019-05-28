@@ -8,8 +8,8 @@
 
 namespace ESD\Plugins\PHPUnit;
 
-use ESD\BaseServer\Server\Context;
-use ESD\BaseServer\Server\Server;
+use ESD\Core\Context\Context;
+use ESD\Core\Server\Server;
 use ESD\Plugins\Console\ConsolePlugin;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -43,8 +43,8 @@ class TestCmd extends Command
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return int|null
-     * @throws \ESD\BaseServer\Server\Exception\ConfigException
      * @throws \ReflectionException
+     * @throws \ESD\Core\Plugins\Config\ConfigException
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {

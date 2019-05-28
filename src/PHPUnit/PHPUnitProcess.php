@@ -8,10 +8,9 @@
 
 namespace ESD\Plugins\PHPUnit;
 
-
-use ESD\BaseServer\Server\Message\Message;
-use ESD\BaseServer\Server\Process;
-use ESD\BaseServer\Server\Server;
+use ESD\Core\Message\Message;
+use ESD\Core\Server\Process\Process;
+use ESD\Core\Server\Server;
 use PHPUnit\TextUI\Command;
 
 class PHPUnitProcess extends Process
@@ -32,8 +31,8 @@ class PHPUnitProcess extends Process
             $command->run(["", Server::$instance->getContainer()->get("phpunit.file")], false);
         } catch (\Throwable $e) {
         }
-        $this->getSwooleProcess()->kill($this->getProcessPid());
-
+        \swoole_event_exit();
+        $this->getSwooleProcess()->exit();
     }
 
     public function onProcessStop()

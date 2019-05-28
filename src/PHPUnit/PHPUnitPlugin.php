@@ -8,9 +8,9 @@
 
 namespace ESD\Plugins\PHPUnit;
 
-use ESD\BaseServer\Server\Context;
-use ESD\BaseServer\Server\PlugIn\AbstractPlugin;
-use ESD\BaseServer\Server\PlugIn\PluginInterfaceManager;
+use ESD\Core\Context\Context;
+use ESD\Core\PlugIn\AbstractPlugin;
+use ESD\Core\PlugIn\PluginInterfaceManager;
 use ESD\Plugins\Console\ConsoleConfig;
 use ESD\Plugins\Console\ConsolePlugin;
 
@@ -37,7 +37,10 @@ class PHPUnitPlugin extends AbstractPlugin
     /**
      * @param PluginInterfaceManager $pluginInterfaceManager
      * @return mixed|void
-     * @throws \ESD\BaseServer\Exception
+     * @throws \DI\DependencyException
+     * @throws \DI\NotFoundException
+     * @throws \ESD\Core\Exception
+     * @throws \ESD\Core\Plugins\Config\ConfigException
      * @throws \ReflectionException
      */
     public function onAdded(PluginInterfaceManager $pluginInterfaceManager)
@@ -53,7 +56,6 @@ class PHPUnitPlugin extends AbstractPlugin
     /**
      * 在服务启动前
      * @param Context $context
-     * @return mixed
      */
     public function beforeServerStart(Context $context)
     {
@@ -63,7 +65,6 @@ class PHPUnitPlugin extends AbstractPlugin
     /**
      * 在进程启动前
      * @param Context $context
-     * @return mixed
      */
     public function beforeProcessStart(Context $context)
     {

@@ -9,7 +9,7 @@
 namespace ESD\Plugins\PHPUnit;
 
 
-use ESD\BaseServer\Server\Server;
+use ESD\Core\Server\Server;
 use PHPUnit\Framework\TestCase;
 
 class GoTestCase extends TestCase

@@ -6,8 +6,8 @@
  * Time: 14:51
  */
 
-use ESD\BaseServer\ExampleClass\Server\DefaultServer;
 use ESD\Plugins\PHPUnit\PHPUnitPlugin;
+use ESD\Server\Co\ExampleClass\DefaultServer;
 
 require __DIR__ . '/../vendor/autoload.php';
 

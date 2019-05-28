@@ -1,6 +1,6 @@
 {
   "require": {
-    "esd/base-server":"~0.1",
+    "esd/esd-core":"~0.1",
     "esd/console-plugin":"~0.1"
   },
   "autoload": {
@@ -21,6 +21,7 @@
   "description": "phpunit-plugin",
   "license": "MIT",
   "require-dev": {
-    "phpunit/phpunit": "^7.5"
+    "phpunit/phpunit": "^7.5",
+    "esd/esd-co-server":"~0.1"
   }
 }
